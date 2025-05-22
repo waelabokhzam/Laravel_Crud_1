@@ -15,11 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('authentication.Login');
     // return redirect()->route('product.index');
 });
+Route::get('/login', function () {
+    return view('authentication.Login');
+    // return redirect()->route('product.index');
+})->name('login');
+Route::get('/register', function () {
+    return view('authentication.Register');
+})->name('register');
 
-Route::resource('product', ProductController::class);
-Auth::routes();
+// Route::resource('product', ProductController::class);
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

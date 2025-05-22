@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/', function () {
+    return view('authentication.Login');
+    // return redirect()->route('product.index');
 });
+Route::get('/login', function () {
+    return view('authentication.Login');
+    // return redirect()->route('product.index');
+});
+Route::get('/register', function () {
+    return view('authentication.Register');
+});
+
